@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Redline Garage | Know every part of your car</title>
+<meta name="color-scheme" content="dark">
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#ef233c;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+html{scroll-behavior:smooth;scroll-padding-top:env(safe-area-inset-top,0px);background:#000}
+body{background:#000;font-family:'Inter',sans-serif}
+.fm{font-family:'Manrope',sans-serif}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes star{from{transform:translateY(0)}to{transform:translateY(-2000px)}}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+@keyframes spin{to{--a:360deg}}
+.up{animation:up .8s ease-out both}
+.cta{--a:0deg;border-radius:9999px;padding:1rem 2.5rem;border:2px solid transparent;cursor:pointer;
+background:linear-gradient(#000,#000) padding-box,conic-gradient(from var(--a),transparent 0%,#ef233c 5%,#ef233c 30%,transparent 40%,transparent 100%) border-box;animation:spin 2.5s linear infinite}
+.s1{box-shadow:234px 124px #fff,654px 345px #fff,876px 12px #fff,1200px 800px #fff,400px 1500px #fff,1800px 200px #fff,100px 1000px #fff,900px 1900px #fff,500px 600px #fff,1400px 100px #fff,300px 400px #fff,1600px 1200px #fff}
+.s2{box-shadow:123px 456px #fff,789px 234px #fff,456px 890px #fff,1100px 300px #fff,200px 1200px #fff,1500px 500px #fff,600px 1700px #fff,1300px 900px #fff}
+.blur{position:fixed;z-index:40;inset:0 0 auto 0;height:120px;pointer-events:none;background:linear-gradient(to bottom,rgba(0,0,0,.8),transparent)}
+::selection{background:#ef233c;color:#fff}
+select{background:#09090b;color:#e4e4e7}
+.card{transition:border-color .2s}
+.card:hover{border-color:rgba(255,255,255,.25)}
+:focus-visible{outline:2px solid #ef233c;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body class="text-white overflow-x-hidden">
+<div class="fixed inset-0 z-0 pointer-events-none">
+  <div class="absolute inset-0 bg-gradient-to-b from-[#1a0505] to-black"></div>
+  <div class="absolute top-0 left-0 w-[1px] h-[1px] s1" style="animation:star 50s linear infinite"></div>
+  <div class="absolute top-0 left-0 w-[2px] h-[2px] s2" style="animation:star 80s linear infinite"></div>
+  <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-red-600/5 rounded-full blur-[120px]"></div>
+  <div class="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:40px_40px] [mask-image:radial-gradient(circle_at_center,black_40%,transparent_80%)]"></div>
+</div>
+<div class="blur"></div>
+<header class="fixed top-0 left-0 w-full z-50 pt-[calc(1.5rem+env(safe-area-inset-top,0px))] px-4">
+  <nav class="max-w-5xl mx-auto flex items-center justify-between bg-black/60 backdrop-blur-xl border border-white/10 rounded-full px-6 py-3 shadow-2xl">
+    <a href="#top" class="flex items-center gap-2"><span class="w-5 h-5 bg-[#ef233c] rounded-sm rotate-45"></span><span class="text-lg font-bold fm tracking-tight">Redline Garage</span></a>
+    <div class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+      <a href="#levels" class="hover:text-white">How to read it</a>
+      <a href="#parts" class="hover:text-white">All parts</a>
+      <a href="#safety" class="hover:text-white">Safety</a>
+    </div>
+    <a href="#parts" class="rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-bold uppercase tracking-wider active:scale-95 transition-transform">Explore parts</a>
+  </nav>
+</header>
+
+<main class="relative z-10" id="top">
+  <section class="min-h-[90vh] flex flex-col items-center justify-center pt-36 pb-16 px-6">
+    <div class="text-center max-w-5xl mx-auto">
+      <div class="up inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md mb-8">
+        <span class="relative flex h-2 w-2"><span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span><span class="relative inline-flex rounded-full h-2 w-2 bg-[#ef233c]"></span></span>
+        <span class="text-xs font-medium text-red-100/90 fm">43 parts explained in plain language</span>
+      </div>
+      <h1 class="up text-5xl md:text-8xl font-semibold tracking-tighter fm leading-[1.1] mb-8" style="animation-delay:.15s">
+        <span class="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">Know every part</span>
+        <span class="block text-transparent bg-clip-text bg-gradient-to-b from-white via-white to-white/40">of your <span class="text-[#ef233c]">car.</span></span>
+      </h1>
+      <p class="up text-lg md:text-2xl text-zinc-400 max-w-2xl mx-auto mb-10 leading-relaxed" style="animation-delay:.3s">
+        See what each part does, which ones you can check or service yourself, and which ones to leave to a mechanic.
+      </p>
+      <a href="#parts" class="up cta inline-block font-medium" style="animation-delay:.45s">Browse the parts</a>
+    </div>
+  </section>
+
+  <section id="levels" class="py-24 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="mb-14 text-center max-w-3xl mx-auto">
+        <h2 class="text-4xl md:text-5xl font-semibold fm tracking-tight mb-5">Every part gets <span class="text-[#ef233c]">one of three labels</span></h2>
+        <p class="text-lg text-zinc-400 font-light">Look for the label on each card so you know where your job starts and stops.</p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="card p-8 border border-white/10 bg-black rounded-xl"><span class="inline-block rounded-full border border-emerald-400/40 bg-emerald-400/10 text-emerald-400 text-xs font-semibold px-3 py-1 mb-5">Do it yourself</span><h3 class="text-2xl font-semibold fm mb-2">Check and service</h3><p class="text-zinc-400">Safe for a beginner with basic tools and your owner's manual. Examples: tire pressure, wipers, air filter.</p></div>
+        <div class="card p-8 border border-white/10 bg-black rounded-xl"><span class="inline-block rounded-full border border-amber-400/40 bg-amber-400/10 text-amber-400 text-xs font-semibold px-3 py-1 mb-5">Check only</span><h3 class="text-2xl font-semibold fm mb-2">Look, then call a pro</h3><p class="text-zinc-400">You can inspect it and spot early signs of wear, but repair needs special tools or training. Examples: brake pads, belts.</p></div>
+        <div class="card p-8 border border-white/10 bg-gradient-to-b from-[#1a0505] to-black rounded-xl"><span class="inline-block rounded-full border border-[#ef233c]/50 bg-[#ef233c]/10 text-[#ef233c] text-xs font-semibold px-3 py-1 mb-5">Pro only</span><h3 class="text-2xl font-semibold fm mb-2">Leave it to a mechanic</h3><p class="text-zinc-400">Hidden, high risk, or easy to damage. A mistake can hurt you or the engine. Examples: airbags, timing belt.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <div id="safety" class="w-full bg-[#ef233c] py-20 px-6">
+    <div class="max-w-4xl mx-auto text-center text-black">
+      <h3 class="text-3xl md:text-5xl font-bold fm leading-tight mb-6">Park on level ground, engine off, parking brake on.</h3>
+      <p class="text-lg md:text-xl font-medium text-black/80 max-w-2xl mx-auto">Let the engine cool before opening anything under the hood. If a job needs the car lifted, use jack stands. A jack alone is never safe.</p>
+    </div>
+  </div>
+
+  <section id="parts" class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-10">
+        <h2 class="text-4xl md:text-5xl font-semibold fm mb-4">All parts</h2>
+        <p class="text-zinc-400 mb-8">Tap a part to see how to check it and when to see a pro.</p>
+        <div id="chips" class="flex flex-wrap justify-center gap-2 mb-5"></div>
+        <input id="sq" type="search" aria-label="Search parts" placeholder="Search, e.g. brake" class="w-full max-w-md rounded-full border border-white/10 bg-black/60 px-6 py-3 text-sm placeholder-zinc-500">
+      </div>
+      <div id="grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+    </div>
+  </section>
+  <footer class="px-6 py-10 border-t border-white/5 text-sm text-zinc-500 text-center max-w-3xl mx-auto">
+    General guidance only. Always follow your owner's manual, and ask a qualified mechanic if you are unsure.
+  </footer>
+</main>
+
+<dialog id="dlg" class="m-auto w-[min(94vw,36rem)] max-h-[90vh] overflow-y-auto rounded-3xl border border-white/10 bg-[#0a0a0a] p-0 text-white backdrop:bg-black/80">
+  <div class="p-6 md:p-8">
+    <div class="flex justify-between items-start gap-4">
+      <div class="flex items-center gap-4"><svg id="di" class="w-20 h-20 shrink-0 text-[#ef233c]" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></svg>
+      <div><h2 id="dn" class="fm text-2xl font-semibold"></h2><p id="ds" class="text-sm text-zinc-400"></p><span id="dl" class="inline-block mt-2 rounded-full border text-xs font-semibold px-3 py-1"></span></div></div>
+      <button id="x" type="button" aria-label="Close" class="text-zinc-400 hover:text-white text-3xl leading-none">&times;</button>
+    </div>
+    <dl class="mt-6 space-y-5 text-zinc-300">
+      <div><dt class="fm font-semibold text-white mb-1">What it does</dt><dd id="dw"></dd></div>
+      <div><dt class="fm font-semibold text-white mb-1">Effect on performance and mileage</dt><dd id="de"></dd></div>
+      <div><dt class="fm font-semibold text-white mb-1">What you can do</dt><dd id="dc"></dd></div>
+      <div><dt class="fm font-semibold text-white mb-1">Warning signs</dt><dd id="dg"></dd></div>
+    </dl>
+  </div>
+</dialog>
+
+<script>
+const L={diy:["Do it yourself","text-emerald-400 border-emerald-400/40 bg-emerald-400/10"],check:["Check only","text-amber-400 border-amber-400/40 bg-amber-400/10"],pro:["Pro only","text-[#ef233c] border-[#ef233c]/50 bg-[#ef233c]/10"]};
+const IC={
+oil:'<path d="M32 8C26 18 16 28 16 40a16 16 0 0 0 32 0C48 28 38 18 32 8z"/><path d="M24 42a8 8 0 0 0 8 8"/>',
+air:'<rect x="8" y="16" width="48" height="32" rx="4"/><path d="M14 24v16M22 24v16M30 24v16M38 24v16M46 24v16"/>',
+plug:'<path d="M26 6h12v10H26zM28 16h8v12h-8zM24 28h16v12H24zM32 40v12"/><path d="M28 52h8"/>',
+bat:'<rect x="6" y="20" width="52" height="30" rx="4"/><path d="M16 20v-6h8v6M40 20v-6h8v6M16 35h8M44 30v10M39 35h10"/>',
+alt:'<circle cx="32" cy="32" r="20"/><circle cx="32" cy="32" r="8"/><path d="M32 6v6M32 52v6M6 32h6M52 32h6"/>',
+tire:'<circle cx="32" cy="32" r="24"/><circle cx="32" cy="32" r="12"/><circle cx="32" cy="32" r="3"/><path d="M32 20v-4M32 48v-4M20 32h-4M48 32h-4"/>',
+disc:'<circle cx="32" cy="32" r="24"/><circle cx="32" cy="32" r="6"/><circle cx="32" cy="17" r="2"/><circle cx="32" cy="47" r="2"/><circle cx="17" cy="32" r="2"/><circle cx="47" cy="32" r="2"/>',
+bf:'<path d="M16 22h32v28a4 4 0 0 1-4 4H20a4 4 0 0 1-4-4z"/><path d="M22 14h20v8H22zM16 36h32"/>',
+cool:'<path d="M26 12a6 6 0 0 1 12 0v22a12 12 0 1 1-12 0z"/><path d="M32 22v24"/>',
+wash:'<path d="M8 44L16 14h32l8 30z"/><path d="M20 30c6-4 18-4 24 0M32 44v10M24 50l-4 6M40 50l4 6"/>',
+wipe:'<path d="M8 50A32 32 0 0 1 56 50"/><path d="M32 50L50 22"/><circle cx="32" cy="50" r="3"/>',
+head:'<path d="M26 12c-14 0-20 10-20 20s6 20 20 20z"/><path d="M36 20h22M36 32h22M36 44h22"/>',
+cab:'<rect x="8" y="12" width="48" height="40" rx="4"/><path d="M14 28c6-6 10 6 18 0s12 6 18 0M14 40c6-6 10 6 18 0s12 6 18 0"/>',
+belt:'<rect x="8" y="14" width="48" height="36" rx="18"/><circle cx="20" cy="32" r="6"/><circle cx="44" cy="32" r="6"/>',
+gear:'<circle cx="32" cy="32" r="14"/><circle cx="32" cy="32" r="5"/><path d="M32 6v8M32 50v8M6 32h8M50 32h8M14 14l6 6M44 44l6 6M14 50l6-6M44 20l6-6"/>',
+trans:'<circle cx="22" cy="32" r="12"/><circle cx="46" cy="32" r="8"/><circle cx="22" cy="32" r="3"/><circle cx="46" cy="32" r="3"/><path d="M22 14v-4M22 54v-4M10 32H6"/>',
+shock:'<path d="M32 4v8M22 12l20 5-20 5 20 5-20 5 20 5-20 5M32 52v8"/>',
+air2:'<circle cx="32" cy="38" r="18"/><circle cx="32" cy="38" r="4"/><path d="M32 42v14M18 34H8M46 34h10"/><path d="M20 20c-6-6 0-14 8-10 4-6 12-6 14 0 8-2 10 8 4 12"/>',
+exh:'<path d="M4 38h14"/><rect x="18" y="26" width="30" height="24" rx="12"/><path d="M48 38h12M28 38h10"/>',
+ecu:'<rect x="14" y="14" width="36" height="36" rx="4"/><rect x="24" y="24" width="16" height="16"/><path d="M22 14V6M32 14V6M42 14V6M22 58v-8M32 58v-8M42 58v-8M14 22H6M14 32H6M14 42H6M58 22h-8M58 32h-8M58 42h-8"/>'};
+// [name, system, level, what it does, what you can do, warning signs, icon]
+const P=[
+["Engine oil","Engine","diy","Lubricates moving engine parts and carries away heat so metal does not grind on metal.","Park level, wait 5 minutes after switching off, pull the dipstick, wipe it, reinsert it and pull again. The level should sit between the two marks. Top up with the grade in your manual. Oil changes are a common beginner job with jack stands and a way to recycle the old oil.","Oil warning light, dark gritty oil, burning smell, ticking from the engine.","oil"],
+["Air filter","Engine","diy","Cleans the air going into the engine so dust does not wear it down.","Open the airbox clips and hold the filter up to a light. If you cannot see light through it, swap it. Many cars need no tools.","Weaker acceleration, worse fuel economy, visible dirt.","air"],
+["Spark plugs","Engine","pro","Create the spark that ignites fuel in each cylinder.","You cannot check these without removing them. They are tight and easy to damage on many engines, so most owners leave this to a mechanic at the interval in the manual.","Rough idle, misfires, hard starts, check engine light.","plug"],
+["Battery","Electrical","diy","Stores the power that starts the engine and runs electronics when it is off.","Look for white or green crust on the terminals and make sure the clamps are tight. Clean with baking soda, water and a brush. Batteries last about 3 to 5 years. When replacing, disconnect the negative cable first. Some newer cars need the new battery registered by a shop.","Slow cranking, clicking when you turn the key, swollen case, dim lights.","bat"],
+["Alternator","Electrical","pro","Charges the battery and powers the car while the engine runs.","A parts store or shop can test it quickly. Replacement involves belts and wiring, so leave it to a mechanic.","Battery light, dimming headlights, whining noise, car dies while driving.","alt"],
+["Tires","Tires and suspension","diy","The only part of the car that touches the road, so they decide grip and braking.","Check pressure monthly when cold using the number on the door sticker. Check tread depth with a gauge and look for bulges or nails. You can rotate them yourself with proper stands. Fitting and balancing needs a tire shop.","Low pressure light, uneven wear, vibration, bulges in the sidewall.","tire"],
+["Brake pads and rotors","Brakes","check","Pads clamp onto spinning rotors to slow the car.","Look through the wheel spokes at the pad. If the friction material looks thinner than about 3 mm (1/8 inch), book a replacement. Replacing brakes is safety critical, so a mechanic should do it unless you are experienced.","Squealing, grinding, longer stopping, pulsing pedal, pulling to one side.","disc"],
+["Brake fluid","Brakes","check","Carries the force from your foot to the brakes.","Check that the reservoir is between the marks and the fluid is clear to light amber. Dark fluid is old. Flushing it must be done by a pro, because air in the lines can make brakes fail.","Spongy pedal, dark fluid, brake warning light.","bf"],
+["Coolant","Cooling","check","Keeps the engine from overheating or freezing.","Check the level in the see-through reservoir only when the engine is completely cold. Never open the radiator cap on a hot engine. Top up only with the type in your manual. A full flush is a job for a pro.","Temperature gauge rising, sweet smell, puddles under the car.","cool"],
+["Washer fluid","Visibility","diy","Sprays onto the windshield so wipers can clear dirt.","Open the cap with the washer symbol and fill with washer fluid. Do not use plain water in freezing weather.","Spray stops working, empty reservoir warning.","wash"],
+["Wiper blades","Visibility","diy","Clear rain and dirt so you can see.","Lift the arm and look for cracks, splits or stiff rubber. Most blades clip off and on in a minute. Replace about once a year.","Streaks, smearing, squeaking, chattering.","wipe"],
+["Headlights and bulbs","Lighting","diy","Let you see at night and be seen by others.","Check headlights, brake lights and indicators with a helper or against a wall or window. Many bulbs twist out by hand. On some cars the bumper must come off, which is a job for a pro.","A dark light, hazy lens, flashing indicator that blinks fast.","head"],
+["Cabin air filter","Cabin","diy","Filters dust and pollen from the air you breathe inside the car.","Usually behind the glove box. Pull the old one out, note the arrow direction, and slide in the new one.","Weak airflow, musty smell, windows fogging.","cab"],
+["Serpentine belt","Engine","check","One long belt that drives the alternator, power steering and A/C.","With the engine off, look for cracks, fraying or a shiny glazed surface. Replacement involves a spring-loaded tensioner, so leave it to a mechanic.","Squealing on start, cracked rubber, accessories stop working.","belt"],
+["Timing belt or chain","Engine","pro","Keeps the engine's valves and pistons moving in step.","You cannot see it. Follow the replacement interval in your manual. If a belt snaps, the engine can be wrecked.","Ticking from the front of the engine, engine will not start, rattling chain.","gear"],
+["Transmission","Drivetrain","check","Passes engine power to the wheels through the right gear.","Some cars have a fluid dipstick. Check color and smell with the engine at the temperature your manual says. Many are sealed. Servicing is for a pro.","Slipping gears, delayed shifts, burnt smell, red fluid under the car.","trans"],
+["Shocks and struts","Tires and suspension","check","Keep the tires on the road and the ride smooth.","Push down hard on each corner. More than one or two bounces suggests wear. Look for oily leaks. Replacement uses spring compressors that can injure you, so use a pro.","Bouncy ride, nose dive when braking, uneven tire wear.","shock"],
+["Airbags","Safety","pro","Inflate in a crash to cushion you.","Never poke, repair or remove them. If the airbag light stays on, have it checked by a professional right away.","Airbag light stays on.","air2"],
+["Exhaust and catalytic converter","Exhaust","check","Carries gases away and cleans them before they leave the car.","When cold, look under the car for rust holes or hanging pipes and listen for a loud rumble. Repairs need a lift and welding, so book a shop.","Loud noise, rotten egg smell, rattling, check engine light.","exh"],
+["Engine computer and sensors","Electronics","pro","Reads sensors and controls fuel, spark and emissions.","An inexpensive OBD-II reader plugs in under the dash and shows the code behind a check engine light. Diagnosing and repairing the cause is for a pro.","Check engine light, poor mileage, stalling, rough running.","ecu"]];
+
+Object.assign(IC,{
+oilf:'<rect x="18" y="14" width="28" height="36" rx="4"/><path d="M18 22h28M26 50v6M38 50v6M24 32h16"/>',
+rad:'<rect x="10" y="14" width="44" height="36" rx="3"/><path d="M10 24h44M10 32h44M10 40h44M18 14v36M46 14v36"/>',
+pump:'<circle cx="28" cy="34" r="16"/><path d="M28 34l8-8M44 34h14M28 18V8h12"/>',
+inj:'<path d="M26 6h12v12H26zM28 18l-4 14h16l-4-14M32 32v10l-4 8h8l-4-8"/>',
+thr:'<circle cx="32" cy="32" r="22"/><path d="M14 38L50 26"/><circle cx="32" cy="32" r="3"/>',
+o2:'<path d="M24 8h16v16H24zM28 24v22M36 24v22M28 46h8v10h-8z"/>',
+turbo:'<circle cx="32" cy="32" r="22"/><path d="M32 32c0-10 8-14 14-12M32 32c10 0 14 8 12 14M32 32c0 10-8 14-14 12M32 32c-10 0-14-8-12-14"/>',
+blk:'<rect x="10" y="20" width="44" height="30" rx="3"/><path d="M18 20v-8h8v8M38 20v-8h8v8M20 32v12M32 32v12M44 32v12"/>',
+clu:'<circle cx="22" cy="32" r="14"/><circle cx="44" cy="32" r="14"/>',
+cv:'<path d="M4 32h14M46 32h14"/><circle cx="26" cy="32" r="10"/><circle cx="40" cy="32" r="10"/>',
+diff:'<circle cx="32" cy="32" r="16"/><path d="M4 32h12M48 32h12M32 16V6M24 32h16"/>',
+steer:'<circle cx="32" cy="32" r="24"/><circle cx="32" cy="32" r="6"/><path d="M32 38v18M10 28c14 6 30 6 44 0"/>',
+joint:'<circle cx="32" cy="24" r="8"/><path d="M32 32v20M20 52h24M12 24h12M40 24h12"/>',
+bear:'<circle cx="32" cy="32" r="22"/><circle cx="32" cy="32" r="12"/><circle cx="32" cy="32" r="4"/>',
+aln:'<path d="M12 12l14 40M52 12L38 52M32 8v48" stroke-dasharray="4 4"/><circle cx="32" cy="32" r="4"/>',
+cal:'<rect x="14" y="14" width="36" height="36" rx="6"/><circle cx="32" cy="32" r="8"/><path d="M4 32h10M50 32h10"/>',
+st:'<circle cx="28" cy="32" r="16"/><path d="M44 32h14M28 16v-8M20 8h16M22 32l6 8 6-14"/>',
+fuse:'<rect x="14" y="22" width="36" height="20" rx="3"/><path d="M8 32h6M50 32h6M22 32l6-6 8 12 6-6"/>',
+ac:'<path d="M32 6v52M8 20l48 24M8 44l48-24"/><circle cx="32" cy="32" r="4"/>',
+sb:'<path d="M20 8l24 8-10 40H18z"/><path d="M26 24l16 6"/><rect x="38" y="38" width="10" height="8" rx="2"/>',
+mnt:'<rect x="10" y="32" width="44" height="12" rx="3"/><path d="M20 32V16h24v16M32 44v12M20 56h24"/>'});
+const X={"Engine oil":"It also helps seal the piston rings and holds dirt in suspension until the filter catches it.","Air filter":"A clean filter lets the engine breathe freely so the computer can mix the right amount of fuel.","Spark plugs":"Each plug must fire at exactly the right moment, thousands of times a minute.","Battery":"It also steadies the voltage for the computers, lights and infotainment.","Alternator":"It is driven by the engine belt, so it takes a small amount of engine power to turn.","Tires":"Their rubber compound, tread and pressure decide grip, comfort and noise.","Brake pads and rotors":"Friction turns the car's motion into heat, and the rotor spreads that heat away.","Brake fluid":"The fluid cannot be squeezed, so pressure passes straight to each wheel.","Coolant":"It also prevents rust and scale inside the cooling system.","Washer fluid":"It helps dissolve oil film and insects that water alone will not remove.","Wiper blades":"The rubber edge must stay soft to follow the curve of the glass.","Headlights and bulbs":"This group also includes brake lights, indicators and fog lamps that tell other drivers what you are doing.","Cabin air filter":"It also protects the A/C evaporator from dirt build-up.","Serpentine belt":"A spring-loaded tensioner keeps the belt tight so it does not slip.","Timing belt or chain":"If timing is off by even one tooth, the engine runs badly or stops.","Transmission":"It lets the engine stay in its efficient speed range as the car speeds up.","Shocks and struts":"Springs hold the car up while shocks calm the bounce after each bump.","Airbags":"A sensor system decides in milliseconds whether a crash is severe enough to fire them.","Exhaust and catalytic converter":"The catalytic converter changes harmful gases into less harmful ones, and the muffler reduces noise.","Engine computer and sensors":"Together with its sensors it adjusts fuel mixture and timing many times a second."};
+const E={"Engine oil":"Fresh oil of the right grade reduces friction, which helps power and fuel economy. Old or wrong-grade oil adds drag and wear, and can cost a few percent in mileage.","Air filter":"A badly clogged filter can slightly raise fuel use on older engines. On modern fuel-injected engines it mostly dulls throttle response.","Spark plugs":"Worn plugs cause misfires, which waste fuel, reduce power and can harm the catalytic converter.","Battery":"Little direct effect on mileage, but a weak battery makes the alternator work harder, and low voltage can confuse sensors.","Alternator":"A healthy one costs very little fuel. A failing one can leave the car without power, and a dragging one slightly increases consumption.","Tires":"Under-inflated tires increase rolling resistance and can cut mileage by a few percent while wearing faster. Correct pressure improves handling, braking and range.","Brake pads and rotors":"Worn pads do not change power but lengthen stopping distance. Sticking brakes drag and can noticeably hurt mileage.","Brake fluid":"No effect on mileage, but old fluid absorbs water and can boil under heavy braking, giving a soft pedal and longer stops.","Coolant":"A correctly cooled engine runs at its efficient temperature. Overheating cuts power, can trigger limp mode and can destroy the engine.","Washer fluid":"No effect on power or mileage, but clear glass is a safety factor, especially at night.","Wiper blades":"No effect on mileage. Good blades keep your view clear in rain and at night.","Headlights and bulbs":"Lights use very little power. They are a safety and legal item, not a mileage item, though LED bulbs use less electricity.","Cabin air filter":"A clogged filter weakens airflow and makes the A/C work harder, which can slightly raise fuel use when the A/C is on.","Serpentine belt":"A slipping belt slows the alternator, A/C and power steering. If it snaps, you lose charging and often steering assist.","Timing belt or chain":"A stretched chain or worn belt retards the timing, reducing power and fuel economy. A broken one can destroy the engine.","Transmission":"Fresh fluid and correct gearing give smooth shifts and good economy. Slipping or late shifts waste fuel and lower performance.","Shocks and struts":"Worn shocks reduce tire contact, which hurts braking and handling. They affect mileage only indirectly, through uneven tire wear.","Airbags":"No effect on performance or mileage. Their job is protecting you in a crash.","Exhaust and catalytic converter":"A blocked converter chokes the engine, causing power loss and poor mileage. A leak before the oxygen sensor can confuse the fuel mixture.","Engine computer and sensors":"A faulty sensor often makes the engine run rich or lean, which hurts mileage and emissions and can reduce power."};
+P.push(
+["Oil filter","Engine","diy","Traps metal particles and dirt so the oil stays clean as it circulates. It is replaced along with the oil.","Replace it at every oil change. Smear a little oil on the new rubber seal and tighten it by hand, plus the extra turn printed on the filter.","Oil leak around the filter, low oil pressure light.","oilf","A clogged filter opens a bypass, so dirty oil reaches the engine. That raises wear and slowly reduces efficiency."],
+["Radiator and cooling fan","Cooling","check","The radiator cools hot coolant with air passing through its fins. The fan pulls air through when the car is slow or parked.","When cold, look for leaks, bent fins or debris. With the engine warm and running, the fan should switch on. Replacement is for a pro.","Overheating in traffic, coolant puddles, fan never spins.","rad","Overheating forces the engine to cut power and burn more fuel. A fan stuck on wastes a little electricity."],
+["Water pump and thermostat","Cooling","pro","The pump circulates coolant. The thermostat holds coolant back until the engine is warm, then opens to keep the temperature steady.","You cannot check them directly. Watch the temperature gauge and listen for a whine from the pump. Replacement is a pro job.","Gauge too high or never warming up, coolant leak, weak heater.","pump","A thermostat stuck open keeps the engine cold and wastes fuel. Stuck shut, it causes overheating."],
+["Fuel pump and fuel filter","Fuel","pro","The pump moves fuel from the tank to the engine at the right pressure. The filter catches dirt before it reaches the injectors.","You cannot inspect them. Replacement involves fuel lines and tank access, which is hazardous, so leave it to a pro.","Hard starts, hesitation under load, whining from the tank, stalling.","pump","A weak pump or clogged filter starves the engine, causing power loss and uneven fuel use."],
+["Fuel injectors","Fuel","pro","Spray a fine mist of fuel into the engine at precisely controlled moments.","A bottle fuel-system cleaner is the only routine DIY step. Testing and replacement need special tools.","Rough idle, misfires, fuel smell, poor mileage.","inj","Dirty or leaking injectors waste fuel and reduce power. Clean ones give smooth running and the best mileage."],
+["Throttle body","Engine","check","A valve that controls how much air enters the engine when you press the pedal.","You can look inside for black carbon build-up. Cleaning needs the right cleaner and care on electronic throttles, so many owners use a pro.","Rough or surging idle, slow throttle response, stalling at stops.","thr","Carbon build-up makes idle unstable and throttle response lazy, which can slightly worsen mileage."],
+["Ignition coils","Engine","check","Turn the battery's low voltage into the high voltage that makes each spark plug fire.","A code reader shows which cylinder is misfiring. On many engines a coil unplugs by hand, but tight access makes it a job for experienced owners or a pro.","Misfire, flashing check engine light, shaking at idle.","plug","A weak coil causes misfires that waste fuel, reduce power and can damage the catalytic converter."],
+["Oxygen sensors","Electronics","pro","Measure leftover oxygen in the exhaust so the computer can fine-tune the fuel mixture.","A code reader may point to a faulty sensor. Removal needs the right socket and often a seized thread, so use a pro.","Check engine light, rotten egg smell, poor mileage.","o2","A lazy sensor makes the mixture too rich or too lean, which commonly costs noticeable mileage and raises emissions."],
+["Turbocharger","Engine","pro","Uses exhaust gas to spin a turbine that forces more air into the engine, so a small engine can make big power.","Use the oil grade the maker asks for and let the engine idle briefly after hard driving. Repairs are for specialists.","Whistling or siren noise, blue smoke, loss of power, oil use.","turbo","A healthy turbo boosts power and, in gentle driving, economy. A failing one loses power sharply and burns oil."],
+["Engine block, pistons and head gasket","Engine","pro","The block holds the cylinders where pistons move. The head gasket seals combustion gases and coolant apart.","Keep oil and coolant topped up and watch for white smoke or milky oil. Internal repairs are major workshop jobs.","White exhaust smoke, milky oil, overheating, knocking.","blk","Wear lowers compression, which cuts power and mileage. A blown head gasket can stop the car."],
+["Clutch","Drivetrain","check","On manual cars it connects and disconnects the engine from the gearbox so you can change gear.","Notice where the pedal bites and whether the engine revs without the car speeding up. Replacement means removing the gearbox, so it is a pro job.","Slipping revs, burning smell, hard gear changes.","clu","A slipping clutch wastes engine power and fuel, and wears out quickly."],
+["Driveshaft and CV axles","Drivetrain","check","Send power from the gearbox to the wheels while letting them steer and move with the suspension.","Look behind the wheels for torn rubber boots and flung grease. Turn the steering fully and listen for clicking. Replacement is for a pro.","Clicking on turns, vibration at speed, grease spatter.","cv","Worn joints cause vibration and some power loss, but affect mileage little until they fail."],
+["Differential","Drivetrain","pro","Lets the left and right wheels turn at different speeds in corners while both receive power.","A mechanic changes its fluid at the interval in your manual. Whining or clunking means a visit to a pro.","Whining that changes with speed, clunk on turns, oil leaks.","diff","Worn gears and old oil add friction, which causes a small loss in power and mileage."],
+["Steering rack and power steering","Steering","check","Turns the steering wheel's motion into wheel movement, with hydraulic or electric assistance to make it light.","On hydraulic systems check the reservoir level as the manual says. Electric systems have no fluid. Other repairs are for a pro.","Heavy steering, whining when turning, fluid leak, loose feel.","steer","Hydraulic pumps take a little engine power. Electric assist is lighter on the engine and saves a small amount of fuel."],
+["Ball joints, control arms and bushings","Tires and suspension","check","Link the wheels to the body, letting them move up and down and steer while keeping alignment.","Look for torn rubber boots and listen for clunks. A pro checks play with the car lifted. Replacement is a pro job.","Clunks over bumps, wandering steering, uneven tire wear.","joint","Worn parts upset alignment, wear tires faster and add drag that can slightly cut mileage."],
+["Wheel bearings","Tires and suspension","pro","Let each wheel spin smoothly with very little friction.","Listen for a hum that changes when you swerve left or right. Replacement needs a press or a hub assembly, so see a mechanic.","Humming or growling that rises with speed, wheel play.","bear","A rough bearing adds friction and slightly reduces mileage, and failure can lock the wheel."],
+["Wheel alignment and balance","Tires and suspension","pro","Alignment sets the wheel angles so the car rolls straight. Balancing makes each wheel spin without shaking.","Check whether the car pulls to one side or the steering wheel sits off-center. The settings need a machine at a tire shop.","Pulling, off-center wheel, vibration, uneven tire wear.","aln","Poor alignment drags the tires, wasting fuel and eating tires quickly. Good alignment improves handling and mileage."],
+["Brake calipers and hoses","Brakes","check","Calipers squeeze the pads onto the rotor. Hoses carry brake fluid to them.","Look for fluid leaks, cracked or bulging hoses and uneven pad wear. A sticking caliper may smell hot. Replacement is for a pro.","Pulling when braking, burning smell, one wheel very hot, soft pedal.","cal","A sticking caliper drags the brake, which cuts mileage and overheats the brake."],
+["Starter motor","Electrical","pro","Spins the engine to start it, then disengages.","If you hear a single click or a slow crank, test the battery first. Starters can be buried in the engine bay, so use a pro.","Clicking, grinding when starting, no crank with a good battery.","st","No effect on mileage while running, but a failed starter means the car will not start."],
+["Fuses and relays","Electrical","diy","Fuses protect circuits from overload. Relays let a small switch control heavy loads such as headlights.","Find the fuse box in the manual, pull the suspect fuse and replace it with one of the same rating. If it blows again, see a pro.","A dead light, window or socket, repeatedly blown fuse.","fuse","No direct effect on mileage, but a failed fuse can disable systems such as the fuel pump or cooling fan."],
+["A/C compressor and condenser","Cabin","pro","The compressor pumps refrigerant and the condenser releases heat outside the car so the cabin cools.","Check that the A/C blows cold and the condenser at the front is free of debris. Refrigerant handling needs a certified pro.","Warm air, noise when the A/C starts, refrigerant leak.","ac","The A/C can add noticeable fuel use in city driving. A weak system makes the engine work harder for less cooling."],
+["Seat belts","Safety","check","Hold you in place in a crash, with pretensioners that pull them tight in the first instants.","Pull each belt out, check for fraying and make sure it locks on a sharp tug and retracts. Have belts checked by a pro after any crash.","Frayed webbing, belt will not lock or retract, sticking buckle.","sb","No effect on performance or mileage. A key part of crash protection."],
+["Engine mounts","Engine","check","Rubber and metal mounts hold the engine in place and soak up its vibration.","Watch for excess engine movement or a loud clunk when starting. Replacement is for a pro.","Vibration at idle, clunk when accelerating, visible engine movement.","mnt","Worn mounts mainly hurt comfort, but extreme movement can strain hoses and wiring."]);
+let lv='all',q='';
+const chipsEl=document.getElementById('chips');
+function chips(){chipsEl.innerHTML=[['all','All parts'],['diy','Do it yourself'],['check','Check only'],['pro','Pro only']].map(c=>`<button data-l="${c[0]}" class="rounded-full border px-4 py-2 text-sm font-medium transition-colors ${lv==c[0]?'bg-[#ef233c] border-[#ef233c]':'border-white/10 bg-white/5 hover:bg-white/10'}">${c[1]}</button>`).join('');}
+function render(){
+ const l=q.toLowerCase(),list=P.map((p,i)=>[p,i]).filter(([p])=>(lv=='all'||p[2]==lv)&&(p[0]+p[1]).toLowerCase().includes(l));
+ document.getElementById('grid').innerHTML=list.map(([p,i])=>`
+<button data-i="${i}" class="card text-left p-6 border border-white/10 bg-black rounded-xl flex flex-col">
+ <div class="h-28 rounded-lg bg-gradient-to-br from-zinc-900 to-black border border-white/5 mb-5 flex items-center justify-center"><svg class="w-16 h-16 text-[#ef233c]" viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${IC[p[6]]}</svg></div>
+ <span class="self-start rounded-full border text-xs font-semibold px-3 py-1 mb-3 ${L[p[2]][1]}">${L[p[2]][0]}</span>
+ <h3 class="font-semibold fm text-lg leading-snug">${p[0]}</h3>
+ <p class="text-sm text-zinc-400 mt-1">${p[1]}</p>
+</button>`).join('')||'<p class="col-span-full text-center text-zinc-400">No parts match. Try another word or label.</p>';chips();}
+const dlg=document.getElementById('dlg'),$=id=>document.getElementById(id);
+document.addEventListener('click',e=>{
+ const c=e.target.closest('[data-l]');if(c){lv=c.dataset.l;render();return;}
+ const b=e.target.closest('[data-i]');if(!b)return;
+ const p=P[b.dataset.i];
+ $('dn').textContent=p[0];$('ds').textContent=p[1];$('dl').textContent=L[p[2]][0];$('dl').className='inline-block mt-2 rounded-full border text-xs font-semibold px-3 py-1 '+L[p[2]][1];
+ $('dw').textContent=p[3]+' '+(X[p[0]]||'');$('de').textContent=p[7]||E[p[0]];$('dc').textContent=p[4];$('dg').textContent=p[5];$('di').innerHTML=IC[p[6]];dlg.showModal();});
+$('x').onclick=()=>dlg.close();
+dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close();});
+$('sq').addEventListener('input',e=>{q=e.target.value;render();});
+render();
+</script>
+</body>
+</html>
